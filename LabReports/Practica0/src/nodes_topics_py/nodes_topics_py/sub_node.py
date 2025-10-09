@@ -16,10 +16,10 @@ class SubNode(Node):
     self.get_logger().info("Nodo subcriptor activo")
 
   def sin_publish_rpm(self,msg):
-    self.mensaje_ = msg.data
-    # self.get_logger().info("El mensaje es " + str(self.mensaje_))
+    self.mensaje_ = msg.data    
     self.new_msg_ = Float64()
     self.new_msg_.data = self.mensaje_*9.55
+    #El valor 9.55 es el factor de conversión utilizado para pasar de rad/s a rpm
     self.vel_rpm_motor_.publish(self.new_msg_)
     self.get_logger().info("La velocidad en rpm es: "+str(self.new_msg_.data))
 
