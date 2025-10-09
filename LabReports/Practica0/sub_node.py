@@ -3,7 +3,7 @@
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import Int32, Float64
+from std_msgs.msg import Float64
 
 
 
@@ -20,6 +20,7 @@ class SubNode(Node):
     # self.get_logger().info("El mensaje es " + str(self.mensaje_))
     self.new_msg_ = Float64()
     self.new_msg_.data = self.mensaje_*9.55
+    #9.55 es el factor de conversión de rad/s a rpm
     self.vel_rpm_motor_.publish(self.new_msg_)
     self.get_logger().info("La velocidad en rpm es: "+str(self.new_msg_.data))
 
