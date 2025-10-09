@@ -3,7 +3,7 @@
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import Int32, Float64
+from std_msgs.msg import Float64
 
 
 
